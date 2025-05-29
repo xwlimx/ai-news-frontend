@@ -2,7 +2,7 @@
 
 import { FileText, Globe, Copy, Check } from 'lucide-react';
 import { useState } from 'react';
-import { AnalysisResult } from '../types';
+import { AnalysisResult } from '@/types/model';
 
 interface ResultsDisplayProps {
   results: AnalysisResult;
