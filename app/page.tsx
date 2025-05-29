@@ -8,7 +8,7 @@ import LoadingSpinner from '@/components/LoadingSpinner';
 import ResultsDisplay from '@/components/ResultsDisplay';
 import ErrorDisplay from '@/components/ErrorDisplay';
 import { ApiService } from '@/services/api';
-import { AnalysisResult, ApiError } from '@/types';
+import { AnalysisResult, ApiError } from '@/types/model';
 
 type InputMode = 'text' | 'file';
 
