@@ -5,7 +5,7 @@ A full-stack web application that analyzes news articles using AI to provide sum
 ## Project Structure
 
 ```
-ai-news-analyzer/
+ai-news-frontend/
 ├── frontend/   	# Next.js React application
 └── README.md
 ```
@@ -26,7 +26,6 @@ ai-news-analyzer/
 
 ### Prerequisites
 - Node.js 22.16+ and npm 10.9+
-- OpenAI API key
 
 ### Frontend Setup
 
@@ -43,7 +42,7 @@ ai-news-analyzer/
 3. **Environment configuration:**
    ```bash
    # Create .env.local
-   NEXT_PUBLIC_API_URL=http://localhost:8000
+   NEXT_PUBLIC_API_URL=http://localhost:3000
    ```
 
 4. **Run development server:**
@@ -63,6 +62,7 @@ ai-news-analyzer/
 	  phases:
 		build:
 		  commands:
+			- npm ci
 			- npm run build
 	  artifacts:
 		baseDirectory: .next
@@ -75,33 +75,11 @@ ai-news-analyzer/
 		  - node_modules/**/*
 	```
 
+#### Frontend Deployment (AWS Amplify - One Time Setup)
 3. **Environment variables in Amplify:**
-   - `NEXT_PUBLIC_API_URL`: 
+   - `NEXT_PUBLIC_API_URL`: XXX 
 
 ## Features
 
 - **File Upload Support**: .txt and .docx files
 - **AI-Powered Analysis**: OpenAI GPT for summarization and entity extraction
-
-
-### Frontend (.env.local)
-```
-NEXT_PUBLIC_API_BASE_URL=http://localhost:8000
-```
-
-## Development Notes
-
-- The backend uses async/await patterns for better performance
-- File processing supports both text and DOCX formats
-- AI prompts are optimized for accuracy and consistency
-- Frontend includes proper TypeScript typing
-- Error boundaries and loading states enhance user experience
-- CORS is configured for cross-origin requests
-
-## Future Enhancement
-
-- Implement rate limiting for the API
-- Add authentication
-- Configure CloudWatch logging
-- Set up monitoring and alerts
-- Implement caching for repeated analyses
