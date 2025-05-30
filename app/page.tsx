@@ -30,7 +30,11 @@ export default function HomePage() {
       
       if (inputMode === 'file' && selectedFile) {
         analysisResults = await ApiService.analyzeArticle(undefined, selectedFile);
-      } else if (inputMode === 'text' && textInput.trim()) {
+      } else if (inputMode === 'text') {
+		const trimmedText = textInput.trim();
+		if (trimmedText.length < 50) {
+			throw new Error('Text input must be at least 50 characters long.');
+		}
         analysisResults = await ApiService.analyzeArticle(textInput.trim());
       } else {
         throw new Error('Please provide either text input or select a file');
