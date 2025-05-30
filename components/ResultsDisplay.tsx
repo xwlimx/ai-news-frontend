@@ -97,11 +97,11 @@ export default function ResultsDisplay({ results }: ResultsDisplayProps) {
         </div>
         <div className="p-4">
           {results.nationalities.length > 0 ? (
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-4">
               {results.nationalities.map((nationality, index) => (
                 <span
                   key={index}
-                  className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 border border-green-200"
+                  className="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium bg-green-100 text-green-800 border border-green-200"
                 >
                   {nationality}
                 </span>
