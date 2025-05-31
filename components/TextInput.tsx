@@ -24,7 +24,7 @@ export default function TextInput({ value, onChange, disabled, placeholder }: Te
         maxLength={50000}
       />
       <div className="flex justify-between items-center mt-2 text-sm text-gray-500">
-        <span>Maximum 50,000 characters</span>
+        <span>Minimum 50 characters</span>
         <span>{value.length.toLocaleString()} / 50,000</span>
       </div>
     </div>
