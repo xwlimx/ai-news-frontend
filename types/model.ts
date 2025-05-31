@@ -1,6 +1,13 @@
+export interface GeopoliticalEntities {
+  countries: string[];
+  nationalities: string[];
+  people: string[];
+  organizations: string[];
+}
+
 export interface AnalysisResult {
   summary: string;
-  nationalities: string[];
+  geopolitical_entities: GeopoliticalEntities;
 }
 
 export interface AnalysisRequest {

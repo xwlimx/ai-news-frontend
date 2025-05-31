@@ -30,10 +30,19 @@ export class ApiService {
       if (!response.data) {
         throw new Error('No data received from server');
       }
+	
+      const responseData = response.data;
+      
+      const geopoliticalEntities: GeopoliticalEntities = {
+        countries: responseData.geopolitical_entities?.countries || responseData.countries || [],
+        nationalities: responseData.geopolitical_entities?.nationalities || responseData.nationalities || [],
+        people: responseData.geopolitical_entities?.people || responseData.people || [],
+        organizations: responseData.geopolitical_entities?.organizations || responseData.organizations || []
+      };
 
       return {
-        summary: response.data.summary || '',
-        nationalities: response.data.nationalities || []
+        summary: responseData.summary || '',
+        geopolitical_entities: geopoliticalEntities
       };
     } catch (error) {
       if (error instanceof AxiosError) {
