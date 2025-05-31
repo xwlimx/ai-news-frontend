@@ -1,5 +1,5 @@
 import axios, { AxiosError } from 'axios';
-import { AnalysisResult, ApiError } from '@/types/model';
+import { AnalysisResult, GeopoliticalEntities, ApiError } from '@/types/model';
 
 // Backend API base URL - update this to your deployed backend URL
 const NEXT_PUBLIC_API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000';
